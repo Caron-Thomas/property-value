@@ -13,6 +13,7 @@ public record UnitFeatures(
         int balcony,
         int storage,
         boolean isServiceAreaSeparate,
+        int garage,
         int unityItems,
         Conservation unitConservation
 ) {

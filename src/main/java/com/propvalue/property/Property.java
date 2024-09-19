@@ -1,30 +1,25 @@
 package com.propvalue.property;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
-
+@Entity
 public record Property(
-        Long id,
-        @NotEmpty
-        String zipCode,
-        String streetName,
-        @PositiveOrZero
-        //@Column(name = "building_number" )
-        int buildingNumber,//number,
-        String block,
-        String unit,
-        String neighborhood,
-
-        UnitType unitType,
-
-        LocalInfra localInfra,
-
-        BuildingFeatures buildingFeatures,
-
-        UnitFeatures unitFeatures
+       @Id
+       @GeneratedValue(strategy = GenerationType.IDENTITY)
+       Long id,
+       @NotEmpty
+       String zipCode,
+       String streetName,
+       @PositiveOrZero
+       int buildingNumber,
+       String block,
+       String unit,
+       String neighborhood,
+       String unitType,
+       long local_infra_id,
+       long building_features_id,
+       long unit_features_id
     ) {
 }

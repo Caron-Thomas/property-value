@@ -1,10 +1,17 @@
 package com.propvalue.property;
 
+import jakarta.persistence.*;
+
+@Entity
 public record LocalInfra(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        Long id,
         boolean asphalt,
         boolean curbsAndGutters,
         boolean sewage,
         boolean septicTank,
+        @Enumerated(EnumType.STRING)
         RouteType routeType
 ) {
     public enum RouteType{

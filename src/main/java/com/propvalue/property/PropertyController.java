@@ -35,7 +35,7 @@ public class PropertyController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void createProperty(@Valid @RequestBody Property property) {
+    public void createProperty(@Valid @RequestBody PropertyDTO property) {
         propertyRepository.create(property);
     }
 

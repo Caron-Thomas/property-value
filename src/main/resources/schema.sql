@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS local_infra (
                                            curbs_and_gutters BOOLEAN NOT NULL,
                                            sewage BOOLEAN NOT NULL,
                                            septic_tank BOOLEAN NOT NULL,
-                                           route_type INT NOT NULL,
+                                           route_type VARCHAR(10) NOT NULL,
                                            PRIMARY KEY (id)
     );
 
@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS unit_features (
                                             social_bathrooms INT NOT NULL,
                                             private_bathrooms INT NOT NULL,
                                             washroom INT,
-                                            service_area DECIMAL(10, 2),
                                             closet INT,
                                             office INT,
                                             balcony INT,

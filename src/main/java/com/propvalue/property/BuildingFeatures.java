@@ -1,6 +1,15 @@
 package com.propvalue.property;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public record BuildingFeatures(
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        Long id,
        ConstructionStandard constructionStandard,
        int unitsPerFloor,
        int levels,
@@ -10,7 +19,7 @@ public record BuildingFeatures(
        int elevatorsQuantity,
        Conservation buildingConservation,
        int buildingItems,
-        boolean allHourSecurityDesk
+       boolean allHourSecurityDesk
 ) {
     public enum ConstructionStandard {
         LOW(1, "Baixo"),

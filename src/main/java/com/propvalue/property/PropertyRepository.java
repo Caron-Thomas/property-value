@@ -39,7 +39,7 @@ public class PropertyRepository {
                 .optional();
     }
 
-    public void create(Property property) {
+    public void create(PropertyDTO property) {
         var created = jdbcClient.sql(
                 "INSERT INTO property(id, zip_code, street_name, building_number, block, unit, neighborhood,unit_type,local_infra_id,building_features_id,unit_features_id) values(?,?,?,?,?,?,?,?,?,?,?)"
                 )
